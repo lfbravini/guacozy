@@ -24,7 +24,7 @@ class ConnectionRdp(Connection):
 
     # Session settings
     console = models.BooleanField(blank=False, default=False)
-    initial_program = models.CharField(max_length=255, blank=True, null=True)
+    initial_program = models.CharField(max_length=255, blank=False, null=False) #UPDATED blank and null values to False fixing session to fail due to invalid parameter
     server_layout = models.CharField(max_length=12,
                                      blank=False,
                                      choices=[
